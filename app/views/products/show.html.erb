@@ -2,16 +2,11 @@
   <b>Title:</b>
   <%=h @product.title %>
 </p>
-
-
 		<%= image_tag(@product.picture.first.public_filename) %>
-	
-
 <p>
   <b>Description:</b>
   <%= @product.description %>
 </p>
-
 
 
 <p>
@@ -20,6 +15,5 @@
 </p>
 
 <%= link_to 'ImageGallery', product_pictures_path(@product) %>
-
 <%= link_to 'Edit', edit_product_path(@product) %> |
 
