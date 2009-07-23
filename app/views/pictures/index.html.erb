@@ -1,0 +1,27 @@
+<% @pictures.each do |picture| %>	
+		
+		<%= picture_for(picture, :small) %>
+		<%= link_to 'Delete', [@product, picture], :confirm => 'Are you sure?', :method => :delete %>
+
+
+<%end	%>
+
+
+
+
+
+<% form_for([@product, Picture.new], :html=> {:multipart => true }) do |f| %>
+	<p>
+	
+    <%= f.label :picture %><br />
+    <%= file_field_tag :picture_file %>
+		<span class="hint"> 
+			We accept JPEG, GIF, or PNG files up to 500 KB. 
+		</span> 
+
+  </p>
+  <p>
+    <%= f.submit 'ADD' %>
+  </p>
+<%= link_to 'Back to product', @product %>
+<% end %>
